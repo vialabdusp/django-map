@@ -1,5 +1,4 @@
 from django.contrib.gis.db import models
-from django.core.serializers import serialize
 
 # Create your models here.
 class Neigh(models.Model):

@@ -1,7 +1,7 @@
 ## Start new Django project.
 
 ```sh
-$ django-admin startproject map-app & cd map-app
+$ django-admin startproject map_app & cd map_app
 ```
 
 ## Start new Django app.
