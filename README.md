@@ -20,8 +20,11 @@ pip install -r requirements.txt
 
 ## Set up new PostGIS database.
 
+```sh
 $ psql -h localhost -U postgres
+```
 
+```sql
 postgres=# CREATE DATABASE postgis_db;
 postgres=# \connect postgis_db;
 postgres=# CREATE EXTENSION postgis;
@@ -33,11 +36,13 @@ postgres=# ALTER ROLE postgis_user SET default_transaction_isolation TO 'read co
 postgres=# ALTER ROLE postgis_user SET timezone TO 'EST';
 
 postgres=# GRANT ALL PRIVILEGES ON DATABASE postgis_db TO postgis_user;
+```
 
 ## Configure settings.
 
 ### Modify installed apps.
 
+```py
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -48,12 +53,13 @@ INSTALLED_APPS = [
     'django.contrib.gis',
     'somerville',
 ]
+```
 
 ### Set up database connection.
 
 Here, we set up Django to expect a PostGIS database we've set up on our `localhost`.
 
-```python
+```py
 DATABASES = {
     'default': {
         'ENGINE': 'django.contrib.gis.db.backends.postgis',
