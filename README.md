@@ -27,15 +27,15 @@ $ psql -h localhost -U postgres
 ```sql
 postgres=# CREATE DATABASE postgis_db;
 postgres=# \connect postgis_db;
-postgres=# CREATE EXTENSION postgis;
+postgis_db=# CREATE EXTENSION postgis;
 
-postgres=# CREATE USER postgis_user WITH PASSWORD 'postgis_pass';
+postgis_db=# CREATE USER postgis_user WITH PASSWORD 'postgis_pass';
 
-postgres=# ALTER ROLE postgis_user SET client_encoding TO 'utf8';
-postgres=# ALTER ROLE postgis_user SET default_transaction_isolation TO 'read committed';
-postgres=# ALTER ROLE postgis_user SET timezone TO 'EST';
+postgis_db=# ALTER ROLE postgis_user SET client_encoding TO 'utf8';
+postgis_db=# ALTER ROLE postgis_user SET default_transaction_isolation TO 'read committed';
+postgis_db=# ALTER ROLE postgis_user SET timezone TO 'EST';
 
-postgres=# GRANT ALL PRIVILEGES ON DATABASE postgis_db TO postgis_user;
+postgis_db=# GRANT ALL PRIVILEGES ON DATABASE postgis_db TO postgis_user;
 ```
 
 ## Configure settings.
